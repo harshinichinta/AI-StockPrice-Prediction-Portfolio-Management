@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { History, Play, AlertCircle } from 'lucide-react';
+import { History, Play } from 'lucide-react';
 import { StatCard } from '../components/common/StatCard';
 import { BacktestService } from '../services/api';
 import { BacktestResult } from '../types';
@@ -39,12 +39,6 @@ export const BacktestPage: React.FC = () => {
           <span>Historical Strategy Simulation</span>
         </h1>
         <p className="text-slate-400 text-sm">Simulate quantitative technical strategy performance without look-ahead bias</p>
-      </div>
-
-      {/* Prominent Historical Disclaimer Banner */}
-      <div className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono flex items-center gap-3">
-        <AlertCircle className="w-5 h-5 shrink-0 text-indigo-400" />
-        <span>Historical Simulation — Past simulation results do not guarantee future stock market performance.</span>
       </div>
 
       {/* Controls Form */}

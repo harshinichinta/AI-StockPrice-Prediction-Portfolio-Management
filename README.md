@@ -120,27 +120,33 @@ The model is evaluated on unseen test data using four quantitative metrics:
 ### Step 1: Clone Repository & Setup Backend
 ```bash
 git clone https://github.com/your-username/StockMind-AI.git
-cd StockMind-AI/backend
+cd StockMind-AI
 
 # Create virtual environment
-python -m venv venv
+python -m venv .venv
 # Activate on Windows PowerShell:
-.\venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1
+# On macOS/Linux:
+# source .venv/bin/activate
 
 # Install requirements
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
 ### Step 2: Start Backend Server
 ```bash
-# From the project root or backend folder:
-uvicorn backend.app.main:app --reload --port 8000
+# Run from the project root:
+python -m uvicorn backend.app.main:app --reload --port 8000
+
+# Or, from the backend folder:
+python -m uvicorn backend.app.main:app --app-dir .. --reload --port 8000
 ```
 - API Documentation (Swagger): `http://127.0.0.1:8000/docs`
 
 ### Step 3: Setup & Start Frontend
 ```bash
-cd ../frontend
+# From the project root:
+cd frontend
 
 # Install node dependencies
 npm install
